@@ -27,7 +27,7 @@ function startLevel(levelIndex) {
     
     // Charger les images
     for(let i = 0; i < imageElements.length; i++) {
-        imageElements[i].src = level.images[i];
+        imageElements[i].src = "/Images/"+level.images[i];
     }
 
     // Réinitialiser le champ de réponse et le message
