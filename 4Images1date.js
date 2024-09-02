@@ -19,7 +19,7 @@ let score = 0;
 let timer = 60; // Chronomètre en secondes
 let timerInterval;
 
-// Fonction levrel start
+// Fonction level start
 function startLevel(levelIndex) {
     const level = levels[levelIndex];
     const imageElements = document.querySelectorAll(".images img");
@@ -82,7 +82,7 @@ function startTimer() {
 // Fonction pour réinitialiser le chronomètre
 function resetTimer() {
     clearInterval(timerInterval);
-    timer = 60;
+    timer = 30;
     document.getElementById("timer").textContent = timer;
     startTimer();
 }
