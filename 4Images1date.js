@@ -19,13 +19,13 @@ let score = 0;
 let timer = 60; // Chronomètre en secondes
 let timerInterval;
 
-// Fonction pour démarrer le niveau
+// Fonction levrel start
 function startLevel(levelIndex) {
     const level = levels[levelIndex];
     const imageElements = document.querySelectorAll(".images img");
     document.getElementById("level").textContent = levelIndex + 1;
     
-    // Charger les images
+    // Chargement images
     for(let i = 0; i < imageElements.length; i++) {
         imageElements[i].src = "/Images/"+level.images[i];
     }
@@ -46,22 +46,22 @@ function checkAnswer() {
     if(userAnswer === levels[currentLevel].word) {
         score += 10;
         document.getElementById("score").textContent = score;
-        message.textContent = "Félicitations ! Vous avez trouvé le bon mot.";
+        message.textContent = "Félicitations ! Vous avez la bonne date.";
         message.style.color = "green";
 
-        clearInterval(timerInterval); // Arrêter le chronomètre
+        clearInterval(timerInterval); // Stop chrono
 
-        // Passer au niveau suivant après une courte pause
+        // Pause et next level
         setTimeout(() => {
             currentLevel++;
             if (currentLevel < levels.length) {
                 startLevel(currentLevel);
             } else {
-                message.textContent = "Vous avez terminé tous les niveaux ! Bravo !";
+                message.textContent = "Temriner ! Félicitations !";
             }
         }, 2000);
     } else {
-        message.textContent = "Désolé, ce n'est pas la bonne date. Essayez encore.";
+        message.textContent = "Oups, je crois qu'il y a une erreur. Essayez encore.";
         message.style.color = "red";
     }
 }
@@ -87,8 +87,8 @@ function resetTimer() {
     startTimer();
 }
 
-// Écouteur d'événement pour le bouton de validation
+// Événement pour le bouton de validation
 document.getElementById("submit").addEventListener("click", checkAnswer);
 
-// Démarrer le premier niveau
+// Début
 startLevel(currentLevel);
