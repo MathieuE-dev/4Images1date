@@ -49,7 +49,7 @@ button {
   border-radius: 35px;
   font-size: 18px;
   cursor: pointer;
-  transition: transform 400ms;
+  transition: transform 400ms, background-color 300ms 150ms;
 }
 
 button:hover {

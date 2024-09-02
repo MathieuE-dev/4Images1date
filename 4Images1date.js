@@ -63,6 +63,7 @@ function checkAnswer() {
     } else {
         message.textContent = "Oups, je crois qu'il y a une erreur. Essayez encore.";
         message.style.color = "red";
+        
     }
 }
 
